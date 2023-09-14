@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Website</title>
+    <link rel="stylesheet" src="./public/style.css"/>
+</head>
+<body>
+    <!-- Your HTML content here, if any -->
+    <!-- <script src="index.js"></script> -->
+    <script src="index.js"></script>
+    <div id="ejs-content"></div>
+
+    <script>
+        // Fetch and display the rendered content from the server
+        fetch('/')
+            .then(response => response.text())
+            .then(content => {
+                document.getElementById('ejs-content').innerHTML = content;
+            })
+            .catch(error => {
+                console.error('Error fetching content:', error);
+            });
+    </script>
+</body>
+</html>
